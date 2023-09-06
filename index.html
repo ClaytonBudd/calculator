@@ -8,33 +8,35 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-	<script src="script.js"></script>
+	<script src="script.js" defer></script>
     
     <div id="calculator">
-        <div id="box">5318008</div>
+        <div id="box"></div>
     
       
         <div id="numpad">
-            <div id="numbers">
-                <button id="one">1</button>
-                <button id="two">2</button>
-                <button id="three">3</button>
-                <button id="four">4</button>
-                <button id="five">5</button>
-                <button id="six">6</button>
-                <button id="seven">7</button>
-                <button id="eight">8</button>
-                <button id="nine">9</button>
-                <button id="zero">0</button>
-            </div>
-            <div id='operators'>
-                <button id="add">+</button>
-                <button id="subtract">-</button>
-                <button id="multiply">X</button>
-                <button id="divide">/</button>
-                <button id="clear">Clear</button>
-            </div>
+          <div id="numbers">
+            <button name="one" data-other-attr =1 onClick="reply_numbers(this)">1</button>
+            <button name="two" data-other-attr =2 onClick="reply_numbers(this)">2</button>
+            <button name="three" data-other-attr =3 onClick="reply_numbers(this)">3</button>
+            <button name="four" data-other-attr =4 onClick="reply_numbers(this)">4</button>
+            <button name="five" data-other-attr =5 onClick="reply_numbers(this)">5</button>
+            <button name="six" data-other-attr =6 onClick="reply_numbers(this)">6</button>
+            <button name="seven" data-other-attr =7 onClick="reply_numbers(this)">7</button>
+            <button name="eight" data-other-attr =8 onClick="reply_numbers(this)">8</button>
+            <button name="nine" data-other-attr =9 onClick="reply_numbers(this)">9</button>
+            <button name="zero" data-other-attr =0 onClick="reply_numbers(this)">0</button>
+          </div>
+          <div id='operators'>
+            <button name="add" data-other-attr ='+' onClick="reply_operators(this)">+</button>
+            <button name="subtract" data-other-attr ='-' onClick="reply_operators(this)">-</button>
+            <button name="multiply" data-other-attr ='*' onClick="reply_operators(this)">X</button>
+            <button name="divide" data-other-attr ='/' onClick="reply_operators(this)">&#247</button>
+            <button name="equals" onClick="operate()">=</button>
+            <button name="clear" onClick="resetVars()">Clear</button>  
         </div>
+        
+    </div>
 
     
 
