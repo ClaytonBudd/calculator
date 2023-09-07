@@ -7,18 +7,17 @@ document.getElementById("box").innerHTML = vars.display;
 
 function updateDisplay(){
     document.getElementById("box").innerHTML = vars.display;
+    console.log(vars)
     
 }
 
-
-
 function reply_numbers(clicked_object){
     if (vars.operatorStored === false){
-        vars.num1 += clicked_object.getAttribute('data-other-attr');
+        vars.num1 += clicked_object.getAttribute('name');
         vars.display = vars.num1
         updateDisplay();
     }else{
-        vars.num2 += clicked_object.getAttribute('data-other-attr');
+        vars.num2 += clicked_object.getAttribute('name');
         vars.display= vars.num2
         vars.secondVarStored = true;
         updateDisplay();
@@ -35,7 +34,8 @@ function resetVars(){
 }
 
 function reply_operators(clicked_object){
-    result = clicked_object.getAttribute('data-other-attr')
+    result = clicked_object.getAttribute('name')
+    console.log(result)
         vars.operator = result    
         vars.operatorStored = true
         if (vars.secondVarStored == true){
@@ -60,7 +60,7 @@ function subtract(a,b){
 }
 
 function multiply(a,b){
-    let result = a * b;
+    let result = Number(a) * Number(b);
     return result
 }
 
@@ -89,5 +89,6 @@ function operate(operator, a, b){
     vars.num1 = result;
     vars.num2 = ""
     vars.display = result;
+    vars.secondVarStored = false;
     updateDisplay()
 }
