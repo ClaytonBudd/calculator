@@ -6,12 +6,11 @@ document.getElementById("box").innerHTML = vars.display;
 
 
 function updateDisplay(){
-    document.getElementById("box").innerHTML = vars.display;
-    console.log(vars)
-    
+        document.getElementById("box").innerHTML = vars.display;
+        console.log(vars)    
 }
 
-function reply_numbers(clicked_object){
+function reply_numbers(clicked_object){    
     if (vars.operatorStored === false){
         vars.num1 += clicked_object.getAttribute('name');
         vars.display = vars.num1
@@ -35,7 +34,6 @@ function resetVars(){
 
 function reply_operators(clicked_object){
     result = clicked_object.getAttribute('name')
-    console.log(result)
         vars.operator = result    
         vars.operatorStored = true
         if (vars.secondVarStored == true){
@@ -65,30 +63,41 @@ function multiply(a,b){
 }
 
 function divide(a,b){
-    let result = a / b
-    return result
+   let result = a / b
+            return result        
 }
 
-
 function operate(operator, a, b){
-    let result
-    switch (vars.operator){
-        case "+":
-            result = add(a,b);
-            break;
-        case "-":
-            result = subtract(a,b);
-            break;
-        case "*":
-            result = multiply(a,b);
-            break;
-        case "/":
-            result = divide(a,b);
-            break;  
+    if(a != ""){
+        if (b !=""){
+            let result
+            switch (vars.operator){
+                case "+":
+                    result = add(a,b);
+                    break;
+                case "-":
+                    result = subtract(a,b);
+                    break;
+                case "*":
+                    result = multiply(a,b);
+                    break;
+                case "/":
+                    if (b="0"){
+                        alert("You can't divide by 0")
+                        resetVars()
+                        vars.display= "error";
+                        updateDisplay()
+                        return;
+                    }else{
+                        result = divide(a,b);
+                        break;  
+                    }       
+            }
+            vars.num1 = result;
+            vars.num2 = ""
+            vars.display = result;
+            vars.secondVarStored = false;
+            updateDisplay()
         }
-    vars.num1 = result;
-    vars.num2 = ""
-    vars.display = result;
-    vars.secondVarStored = false;
-    updateDisplay()
+    }
 }
