@@ -32,7 +32,7 @@
             <button name="subtract" data-other-attr ='-' onClick="reply_operators(this)">-</button>
             <button name="multiply" data-other-attr ='*' onClick="reply_operators(this)">X</button>
             <button name="divide" data-other-attr ='/' onClick="reply_operators(this)">&#247</button>
-            <button name="equals" onClick="operate()">=</button>
+            <button name="equals" onClick="operate(vars.operate, vars.num1, vars.num2)">=</button>
             <button name="clear" onClick="resetVars()">Clear</button>  
         </div>
         

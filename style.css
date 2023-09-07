@@ -1,4 +1,7 @@
 #box{
+    text-align: center;
+    line-height: 10px;
+    vertical-align: middle;
     background: white;
     width: 100px;
     height: 10px;
